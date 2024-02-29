@@ -6,11 +6,8 @@ const Form = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const {tg} = useTelegram();
-    useEffect(() => {
-        tg.MainButton.setParams({
-            text: 'Xonadon haqida malumot olish'
-        })
-    }, [])
+
+
 
     const onSendData = useCallback(() => {
         const data = {
@@ -26,6 +23,12 @@ const Form = () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
     }, [onSendData()])
+
+    useEffect(() => {
+        tg.MainButton.setParams({
+            text: 'Xonadon haqida malumot olish'
+        })
+    }, [])
     useEffect(() => {
         if (!name || !phone) {
             tg.MainButton.hide();
