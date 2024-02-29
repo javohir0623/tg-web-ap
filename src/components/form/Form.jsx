@@ -8,13 +8,13 @@ const Form = () => {
     const {tg} = useTelegram();
     useEffect(() => {
         tg.MainButton.setParams({
-            text:'Xonadon haqida ma\'lumot olish'
+            text: 'Xonadon haqida malumot olish'
         })
     }, [])
     useEffect(() => {
-        if (!name || !phone){
+        if (!name || !phone) {
             tg.MainButton.hide();
-        }else {
+        } else {
             tg.MainButton.show();
         }
     }, [name, phone])
@@ -22,7 +22,7 @@ const Form = () => {
         setName(e.target.value)
     }
     const onChangePhone = (e) => {
-        setName(e.target.value)
+        setPhone(e.target.value)
     }
     return (
         <div className={"form"}>
