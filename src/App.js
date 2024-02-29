@@ -7,9 +7,6 @@ import ProjectList from "./components/ProjectList/ProjectList";
 import Form from "./components/form/Form";
 
 
-const {user, onClose} = useTelegram();
-const tg = window.Telegram.WebApp;
-
 function App() {
     const {onToggleButton, tg} = useTelegram();
     useEffect(() => {
