@@ -4,7 +4,7 @@ import {useTelegram} from "./hooks/useTelegram";
 import Header from "./components/header/Header";
 import {Route, Routes} from 'react-router-dom';
 import ProjectList from "./components/ProjectList/ProjectList";
-import Form from "./components/form/Form";
+import Form from "./components/form/Form.jsx";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Header/>
             <Routes>
                 <Route index element={<ProjectList />}/>
-                <Route path={'form'} element={<Form/>}/>
+                <Route path={'form'} element={<Form />}/>
             </Routes>
         </div>
     );
