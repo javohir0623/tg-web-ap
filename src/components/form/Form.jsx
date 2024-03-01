@@ -7,22 +7,19 @@ const Form = () => {
     const [phone, setPhone] = useState('');
     const {tg} = useTelegram();
 
-
-
     const onSendData = useCallback(() => {
         const data = {
             name,
             phone
         }
-        tg.sendData(JSON.stringify(data));
-    }, [name, phone])
-
+        tg.sendData(JSON.stringify(data))
+    }, [])
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {
             tg.offEvent('mainButtonClicked', onSendData)
         }
-    }, [onSendData()])
+    }, [])
 
     useEffect(() => {
         tg.MainButton.setParams({
