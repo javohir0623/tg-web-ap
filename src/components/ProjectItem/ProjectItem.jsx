@@ -9,12 +9,13 @@ const ProjectItem = ({project, className, onAdd}) => {
         <div className={'project' + className}>
             <div className={'img'}/>
             <div className={'title'}>{project.title}</div>
-            <div className={'describtion'}>{project.describtion}</div>
+            <div className={'description'}>{project.description}</div>
             <div className={'price'}>
                 <span>Narxi <b>{project.price}</b></span>
             </div>
-            <Button className={'add-btn'} onClick={onAddHandler}></Button>
+            <Button className={'add-btn'} onClick={onAddHandler}>
                 Ma'lumot olish
+            </Button>
         </div>
     );
 };
