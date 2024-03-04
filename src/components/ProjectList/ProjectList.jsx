@@ -16,6 +16,7 @@ const getTotalPrice = (items = []) => {
       return acc += item.price
   })
 }
+
 const ProjectList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg} = useTelegram();
@@ -34,7 +35,7 @@ const ProjectList = () => {
         }else {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text:'Buy '${getTotalPrice(newItems)}
+                text:'Buy ${getTotalPrice(newItems)}'
             })
         }
     }
